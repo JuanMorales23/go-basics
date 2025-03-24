@@ -66,7 +66,7 @@ package main
 
 import "fmt"
 
-func func02() {
+func datos() {
 	var saludo string = "Hola que tal "
 	var nombre = "mi nombre es Juan"
 	apellido := "Morales"

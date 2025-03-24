@@ -4,7 +4,7 @@ package main
 
 import "fmt"
 
-func Func01() {
+func helloWorld() {
 	fmt.Println("¡Hello World with GO!")
 }
 

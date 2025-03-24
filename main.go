@@ -1,8 +1,8 @@
 package main
 
-import {}
-
 func main() {
-	func01()
-	func02()
+	helloWorld()
+	datos()
+	condicionales()
+	bucles()
 }
