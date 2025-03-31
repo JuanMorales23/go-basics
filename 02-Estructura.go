@@ -33,6 +33,7 @@ Para el caso de los números tenemos por ejemplo los int la capacidad de especif
 int8
 int16
 int32, etc...
+Para representar números enteros positivos se tiene el tipo uint que significa unsigned integer
 
 >> Arreglos
 var ListaFrutas = [4] string {"Pera", "Naranja"} //Sin valor
@@ -60,6 +61,9 @@ type Persona struct {
 var persona1 Persona = Persona{"Juan", 28, 1.75} //Son como las clases en Java, y esta sería la forma de instanciar
 
 Se profundizará en los structs mas adelante...
+
+>> El acceso a las variables se puede restringir también mediante la mayúscula al principio del nombre de la variable
+Con mayuscula es publica y con minúscula es privada
 */
 
 package main
