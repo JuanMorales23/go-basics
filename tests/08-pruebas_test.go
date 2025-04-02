@@ -36,6 +36,7 @@ func TestSubtract(t *testing.T) {
 	}
 }
 
+// Utilizando las funcionlidades de la librería testify
 func TestMultiply(t *testing.T) {
 	//Arrange (Given) -- Preparación de los datos
 	expectedResult := 1
@@ -47,4 +48,22 @@ func TestMultiply(t *testing.T) {
 
 	//Assert (Then)
 	require.Equal(t, expectedResult, result, "Esperado %d, pero se obtuvo %d", expectedResult, result)
+}
+
+// También con testify
+// Aquí empleamos los subtest, para realizar varias pruebas dentro de una misma función
+func TestDivide(t *testing.T) {
+	t.Run("División normal", func(t *testing.T) {
+		//Arrange (Given) -- Preparación de los datos
+		expectedResult := 2
+		num1 := 4
+		num2 := 2
+
+		// Act (When) -- Afirmación o ejecución de la función
+		result, err := Divide(num1, num2)
+
+		//Assert (Then)
+		require.Contains(t, err, "No se puede dividir por cero", "Esperado %d, pero se obtuvo %d", expectedResult, result)
+		require.Equal(t, expectedResult, result)
+	})
 }

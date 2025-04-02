@@ -50,13 +50,38 @@ func funciones() {
 }
 
 // Las funcione se pueden pasar también como parámetros
-func operaciones(operacion func, num1 int, num2 int) float32 {
-	Prueba()
-	return operacion(num1, num2)
-
+func operaciones(operacion func(...int) int, num1 int, num2 int) float32 {
+	resultado := float32(operacion(num1, num2))
+	return resultado
 }
 
-// Solo visible desde el archivo
-func Prueba() {
+// func realizarOperacion() {
+// 	operaciones := operaciones(multiplicarfunc(8), 5, 6)
+// }
 
+// Solo visible desde el archivo
+func prueba() {
+	fmt.Println("Hola desde la función prueba")
+}
+
+// Solo visible desde el paquete
+func PruebaPublica() {
+	fmt.Println("Hola desde la función prueba publica")
+}
+
+// >> Los métodos son una función con un argumento recepetor especial.
+// El arguneto receptor es un tipo de dato que se le pasa a la función
+// Con la ayuda de ese argugento receptor podemos acceder a los atributos de la estructura
+// Puede ser de tipo estructura o de tipo puntero
+
+// Ejemplo de método con argumento receptor
+type Circle struct {
+	Radius float64
+}
+
+// Para definir un método se utiliza la siguiente sintaxis
+// lo que está entre parentesis es el argumento receptor
+// Esto ata el método al tipo y podemos acceder a los campos de esa estructura
+func (c Circle) Area() float64 {
+	return 3.14 * c.Radius * c.Radius
 }
